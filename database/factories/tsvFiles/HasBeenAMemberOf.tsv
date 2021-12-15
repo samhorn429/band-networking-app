@@ -1,0 +1,33 @@
+1	1	1	accountMusician	accountBand	January	2021			Been the keyboard player of this band since the beginning
+2	1	2	accountMusician	accountBand	August	2017	May	2021	Played keys and even sang some backup vocals. Last summer, however, I decided I did not want to be in a pop band anymore
+3	1	1	accountMusician	noAccBand	Sepbember	2016	August	2017	I played some soulful keys in the group "Funky Soul"
+4	2	1	accountMusician	accountBand	January	2021			playing bass
+5	2	3	accountMusician	accountBand	August	2019	December	2020	NULL
+6	3	1	accountMusician	accountBand	January	2021			gettin funky
+7	3	2	accountMusician	noAccBand	April	2019			getting funky with my new band
+8	4	2	accountMusician	accountBand	August	2016			I am the lead guitarist and vocalist of this band
+9	4	3	accountMusician	noAccBand	July	2016	August	2016	This band didn't go too well...
+10	5	2	accountMusician	accountBand	August	2016			NULL
+11	5	4	accountMusician	accountBand	November	2020			NULL
+12	6	2	accountMusician	accountBand	February	2020			bass for pop band
+13	6	4	accountMusician	accountBand	November	2020			bass for garage rock band
+14	1	2	noAccMusician	accountBand	August	2016	February	2020	bobby bassplayer played for this band
+15	5	1	accountMusician	accountBand	January	2021	October	2021	NULL
+16	2	1	noAccMusician	accountBand	January	2021	October	2021	bobby bassplayer played for this band
+17	7	3	accountMusician	accountBand	August	2019			I sing for a super funk group in New York
+18	8	3	accountMusician	accountBand	February	2021			I slappp the bass for Super Funk Group
+19	8	4	accountMusician	noAccBand	January	1967	January	1972	starting bass player for Sly and the Family Stone
+20	8	5	accountMusician	noAccBand	March	1974			then I played with Graham Central Station
+21	9	3	accountMusician	accountBand	August	2019			I blow the horn
+22	3	3	noAccMusician	accountBand	August	2019			Cornell Dupree in super funk group
+23	4	3	noAccMusician	accountBand	August	2019			Eddie Harris in super funk group
+24	5	3	noAccMusician	accountBand	August	2019			Bernard Purdie in super funk group
+25	10	5	accountMusician	accountBand	November	1966	June	2021	I played for Led Zeppelin for a long time. Too bad we barely had any success
+26	10	4	accountMusician	accountBand	July	2021			Just joined this band
+27	11	4	accountMusician	accountBand	November	2020	June	2021	I got kicked out of my garage rock band and I'm trying to start a new one
+28	12	5	accountMusician	accountBand	November	1966			Singer for Led Zeppelin
+29	13	5	accountMusician	accountBand	Sepbember	2007			drummer for Led Zeppelin
+30	16	4	accountMusician	accountBand	November	2020			I scream into microphones
+31	10	6	accountMusician	noAccBand	October	1964	October	1967	playing guitar for the Yardbirds
+32	15	7	accountMusician	noAccBand	July	2016	August	2016	This band didn't go too well...
+33	6	5	noAccMusician	accountBand	November	1966	September	1980	John Bonham
