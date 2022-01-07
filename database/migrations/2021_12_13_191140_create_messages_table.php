@@ -20,6 +20,9 @@ class CreateMessagesTable extends Migration
             $table->longText("content");
             $table->timestamp("timestamp");
             $table->timestamps();
+            $table->foreign("conn_id")
+                ->references("id")->on("connections_table")
+                ->onDelete("cascade");
         });
     }
 

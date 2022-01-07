@@ -11,11 +11,11 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('auth');
+                ->middleware('guest');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
@@ -25,19 +25,19 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('password.request');
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('password.email');
 
 Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('password.reset');
 
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('password.update');
 
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
@@ -60,5 +60,5 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
                 ->middleware('auth');
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('guest')
+                ->middleware('auth')
                 ->name('logout');

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Inertia\ResponseFactory;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,8 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        ResponseFactory::macro('modal', function ($modal) {
-            inertia()->share(['modal' => $modal]);
-        });
+        // ResponseFactory::macro('modal', function ($modal) {
+        //     inertia()->share(['modal' => $modal]);
+        // });
+        View::share('key', 'value');
     }
 }

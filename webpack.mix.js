@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const tailwindcss = require('tailwindcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .react()
+    //.react()
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
@@ -23,3 +23,8 @@ mix.js('resources/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.browserSync({
+    proxy: "127.0.0.1:8000",
+    files: ["public/css/*.css", "public/js/*.js", "resources/views/**/*"]
+});

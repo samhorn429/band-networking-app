@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ConnectionsPageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,57 +15,29 @@ use App\Http\Controllers\ConnectionsPageController;
 |
 */
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+// Connections and Messages
+Route::get('connections')->name('connections')->uses('ConnectionsPageController@index')->middleware('auth');
+//Route::get('connections/{connection}')->name('connections.showMessages')->uses('ConnectionsPageController@showMessages')->middleware('auth');
+Route::post('/connections/{connection}/messages')->name('connections.addMessage')->uses('ConnectionsPageController@addMessage')->middleware('auth');
+
+
+
+// Route::get('/')->name('connections')->uses('ConnectionsPageController@index')->middleware('remember', 'auth');
+// Route::put('/')->name('add_message')->uses('ConnectionsPageController@addMessage')->middleware('auth');
+// //Route::put('/')->name('send_message')->uses('ConnectionsPageController@storeFromAddMessageModal')->middleware('auth');
+// Route::delete('/')->name('remove_connection')->uses('ConnectionsPageController@deleteFromRemoveConfirmModal')->middleware('auth');
+
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
-//Authorization
-
-//Route::get('/connections', function() {
-    //return view('connectionsView');
-//})->name('connections')0>uses();
-
-//Route::get('/connectView')->name('connectView');//->uses('App/Http/Controllers/ConnectionsPageController@index');
-
-// Route::get('/connectView', function() {
-//     return view('connectView');
-// });
-
-// Route::get('/', function() {
-//     return view('welcome');
-// });
-
-/*
-Modal Routes
-*/
-
-//Auth
-// Route::get('login')->name('login')->uses('App\Http\Controllers\Auth\LoginController@showLoginForm')->middleware('guest');
-// Route::post('login')->name('login.attempt')->uses('App\Http\Controllers\Auth\LoginController@login')->middleware('guest');
-// Route::post('logout')->name('logout')->uses('App\Http\Controllers\Auth\LoginController@logout');
-
-// Route::get('login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->middleware('auth');
-// Route::post('login', 'App\Http\Controllers\Auth\LoginController@login')->middleware('auth');
-// Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('/', 'App\Http\Controllers\WelcomeController@index')->middleware('auth');//->middleware('auth');
-
-Route::get('connections', [ConnectionsPageController::class, 'index'])->middleware('remember', 'auth');
-// Route::put('/')->name('connections.addMessage')->uses('ConnectionsPageController@addMessage')->middleware('auth');
-// Route::put('connections')->name('connections.storeMessage')->uses('ConnectionsPageController@storeFromAddMessageModal')->middleware('auth');
-// Route::delete('connections')->name('connections.destroy')->uses('ConnectionsPageController@destroy')->middleware('auth');
-
-Route::put('connections', 'App\Http\Controllers\ConnectionsPageController@addMessage')->middleware('auth');
-Route::put('connections', 'App\Http\Controllers\ConnectionsPageController@storeFromAddMessageModal')->middleware('auth');
-Route::delete('connections', 'App\Http\Controllers\ConnectionsPageController@destroy')->middleware('auth');
-
-Route::get('500', function() {
-    echo $fail;
-});

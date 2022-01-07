@@ -109,8 +109,6 @@ export default function Authenticated({ auth, header, children }) {
                         </div>
                     </div>
                 </div>
-
-                
             </nav>
 
             {header && (

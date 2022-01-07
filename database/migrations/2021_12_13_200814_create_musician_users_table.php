@@ -24,7 +24,10 @@ class CreateMusicianUsersTable extends Migration
             $table->longText("description")->nullable();
             $table->longText("imagePath")->nullable();
             $table->longText("lookingFor")->nullable();
-            $table->timestamps();          
+            $table->timestamps();    
+            $table->foreign("email")
+                ->references("email")->on("users")
+                ->onDelete("cascade"); 
         });
     }
 

@@ -27,6 +27,9 @@ class CreateBandUsersTable extends Migration
             $table->string("startMonth", 10);
             $table->integer("startYear");
             $table->timestamps();
+            $table->foreign("email")
+                ->references("email")->on("users")
+                ->onDelete("cascade"); 
         });
     }
 

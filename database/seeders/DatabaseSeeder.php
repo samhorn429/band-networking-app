@@ -17,6 +17,7 @@ use App\Models\NoAccountBandGenre;
 use App\Models\NoAccountMembers;
 use App\Models\SearchingFor;
 use App\Models\Talents;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +28,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         BandUser::factory()->populateBandUsers();
         Connection::factory()->populateConnections();
         ConnectionRequest::factory()->populateConnectionRequests();

@@ -6,7 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -44,5 +45,14 @@ class User extends Authenticatable
 
     public function musicianUser() {
         return $this->hasOne(MusicianUser::class, "email", "email");
+        //return MusicianUser::has()
     }
+
+    public function bandUser() {
+        return $this->hasOne(BandUser::class, "email", "email");
+    }
+
+    // public function musicianUsers() {
+    //     return MusicianUser::all();
+    // }
 }

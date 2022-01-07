@@ -12,16 +12,16 @@ class Connection extends Model
     use HasFactory;
 
     public function messages() {
-        return $this->hasMany(Message::class, "conn_id", "conn_id")
-            ->orderBy('timestamp', 'desc');
+        return $this->hasMany(Message::class, "conn_id", "id")
+            ->orderBy('timestamp', 'asc');
     }
 
     public function userOne() {
-        return $this->belongsTo(MusicianUser::class, "user1_id", "user_id");
+        return $this->belongsTo(MusicianUser::class, "user1_id", "id");
     }
 
     public function userTwo() {
-        return $this->belongsTo(MusicianUser::class, "user2_id", "user_id");
+        return $this->belongsTo(MusicianUser::class, "user2_id", "id");
     }
 
     public function scopeOrderByTimestamp($query) {
