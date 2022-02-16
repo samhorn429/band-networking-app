@@ -1,3 +1,13 @@
+Some Key directories/files to look at:
+
+    app/Models
+    app/http/Controllers/ConnectionsPageController.php
+    app/http/Requests
+    database/factories
+    database/seeders
+    resources/js/Pages/Connections/index.js
+    routes/web.php
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
