@@ -8,6 +8,10 @@ Some Key directories/files to look at:
     resources/js/Pages/Connections/index.js
     routes/web.php
 
+# A Quick Screenshot
+<img width="600" alt="Screen Shot 2022-02-16 at 4 30 01 PM" src="https://user-images.githubusercontent.com/49109630/154364814-a7b2075c-9368-458e-ad8f-3135a775d84b.png">
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
